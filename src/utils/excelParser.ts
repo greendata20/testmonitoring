@@ -248,48 +248,8 @@ function extractSpecificDisabilityType(header: string): string | null {
   return null;
 }
 
-// 헤더에서 성별과 장애유형 정보 추출 (개선된 버전) - 현재 사용하지 않음
-// function parseHeaderInfo(header: string): { gender: '남성' | '여성' | '전체', disabilityType: string } {
-  console.log(`🔍 헤더 분석 중: "${header}"`);
-  let gender: '남성' | '여성' | '전체' = '전체';
-  let disabilityType = '전체장애';
-  
-  // 성별 추출 (더 정확한 패턴)
-  if (header.includes('남자') || header.includes('남성') || header.match(/남(?!녀)/)) {
-    gender = '남성';
-    console.log(`  ✅ 남성 감지: "${header}"`);
-  } else if (header.includes('여자') || header.includes('여성') || header.match(/여(?!러)/)) {
-    gender = '여성';
-    console.log(`  ✅ 여성 감지: "${header}"`);
-  } else {
-    console.log(`  ⚪ 성별 감지 안됨: "${header}"`);
-  }
-  
-  // 장애유형 추출
-  const specificType = extractSpecificDisabilityType(header);
-  if (specificType) {
-    disabilityType = specificType;
-  } else {
-    // 기타 패턴 매칭
-    if (header.includes('전체') || header.includes('계') || header.includes('합계')) {
-      disabilityType = '전체장애';
-    } else if (header.includes('신체') || header.includes('외부') || header.includes('신체외부')) {
-      disabilityType = '신체외부장애';
-    } else if (header.includes('정신') && header.includes('내부')) {
-      disabilityType = '정신내부장애';
-    } else if (header.includes('중증')) {
-      disabilityType = '중증장애';
-    } else if (header.includes('경증')) {
-      disabilityType = '경증장애';
-    }
-  }
-  
-  console.log(`  🎯 최종 결과: 성별="${gender}", 장애유형="${disabilityType}"`);
-  return { gender, disabilityType };
-}
-
-// 유틸리티 함수들 - 현재 사용하지 않음
-// function cleanText(text: string): string {
+// 유틸리티 함수들
+function cleanText(text: string): string {
   return text.replace(/[\r\n\t]/g, ' ').trim();
 }
 
