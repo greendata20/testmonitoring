@@ -180,7 +180,7 @@ const StatisticsCharts: React.FC = () => {
           </h3>
           <div className="h-96">
             <ResponsiveContainer width="100%" height="100%">
-              <BarChart data={topRegionData} margin={{ top: 20, right: 30, left: 100, bottom: 90 }}>
+              <BarChart data={topRegionData} margin={{ top: 20, right: 30, left: 80, bottom: 90 }}>
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis 
                   dataKey="name" 
@@ -192,16 +192,10 @@ const StatisticsCharts: React.FC = () => {
                   tick={{ dy: 10 }}
                 />
                 <YAxis 
-                  label={{ 
-                    value: '인원 수 (명)', 
-                    angle: -90, 
-                    position: 'outside',
-                    style: { textAnchor: 'middle' }
-                  }}
                   tickFormatter={formatNumber}
-                  width={90}
-                  fontSize={10}
-                  tick={{ dx: -15 }}
+                  width={70}
+                  fontSize={11}
+                  tick={{ dx: -5 }}
                   axisLine={true}
                   tickLine={true}
                 />
@@ -285,7 +279,7 @@ const StatisticsCharts: React.FC = () => {
           </h3>
           <div className="h-96">
             <ResponsiveContainer width="100%" height="100%">
-              <BarChart data={topTypeData} margin={{ top: 20, right: 30, left: 100, bottom: 120 }}>
+              <BarChart data={topTypeData} margin={{ top: 20, right: 30, left: 80, bottom: 120 }}>
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis 
                   dataKey="name" 
@@ -297,16 +291,10 @@ const StatisticsCharts: React.FC = () => {
                   tick={{ dy: 10 }}
                 />
                 <YAxis 
-                  label={{ 
-                    value: '인원 수 (명)', 
-                    angle: -90, 
-                    position: 'outside',
-                    style: { textAnchor: 'middle' }
-                  }}
                   tickFormatter={formatNumber}
-                  width={90}
-                  fontSize={10}
-                  tick={{ dx: -15 }}
+                  width={70}
+                  fontSize={11}
+                  tick={{ dx: -5 }}
                   axisLine={true}
                   tickLine={true}
                 />
@@ -340,7 +328,7 @@ const StatisticsCharts: React.FC = () => {
           </h3>
           <div className="h-96">
             <ResponsiveContainer width="100%" height="100%">
-              <ComposedChart data={combinedData} margin={{ top: 20, right: 30, left: 100, bottom: 100 }}>
+              <ComposedChart data={combinedData} margin={{ top: 20, right: 30, left: 80, bottom: 100 }}>
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis 
                   dataKey="name" 
@@ -352,16 +340,10 @@ const StatisticsCharts: React.FC = () => {
                   tick={{ dy: 10 }}
                 />
                 <YAxis 
-                  label={{ 
-                    value: '인원 수 (명)', 
-                    angle: -90, 
-                    position: 'outside',
-                    style: { textAnchor: 'middle' }
-                  }}
                   tickFormatter={formatNumber}
-                  width={90}
-                  fontSize={10}
-                  tick={{ dx: -15 }}
+                  width={70}
+                  fontSize={11}
+                  tick={{ dx: -5 }}
                   axisLine={true}
                   tickLine={true}
                 />
