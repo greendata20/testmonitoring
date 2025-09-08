@@ -172,7 +172,7 @@ const DisabilityMonitoringApp: React.FC = () => {
 
                   <Card className="p-6 text-center bg-gradient-to-br from-green-50 to-green-100 hover:shadow-lg transition-shadow">
                     <div className="w-12 h-12 mx-auto mb-4 bg-green-600 rounded-xl flex items-center justify-center">
-                      <FiBarChart3 className="text-white" size={24} />
+                      <FiBarChart className="text-white" size={24} />
                     </div>
                     <h3 className="text-lg font-semibold mb-2 text-green-900">지역 수</h3>
                     <p className="text-3xl font-bold text-green-600">{stats.regionStats.length}</p>

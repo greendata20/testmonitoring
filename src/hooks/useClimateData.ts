@@ -178,7 +178,7 @@ export const useClimateData = () => {
       const response = await fetch(csvPath);
       const csvText = await response.text();
       
-      let parsedData;
+      let parsedData: any;
       switch (dataType) {
         case 'thermal':
           parsedData = parseCSV(csvText, parseThermalComfortData);

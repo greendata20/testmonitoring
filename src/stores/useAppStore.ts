@@ -165,9 +165,9 @@ export const useAppStore = create<AppState>()(
           set({ layers: updatedLayers }, false, 'updateLayerOpacity');
         },
         
-        setSidebarState: (state) => 
+        setSidebarState: (sidebarState) => 
           set(state => ({ 
-            sidebar: { ...state.sidebar, ...state } 
+            sidebar: { ...state.sidebar, ...sidebarState } 
           }), false, 'setSidebarState'),
         
         setFilters: (filters) => 

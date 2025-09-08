@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { disabilityData, nationalStats, disabilityTypeLabels, DisabilityStats } from '../../data/disabilityData';
+import { disabilityData, nationalStats, disabilityTypeLabels } from '../../data/disabilityData';
+import type { DisabilityStats } from '../../data/disabilityData';
 import { Card } from '../ui/Card';
 import { Badge } from '../ui/Badge';
 import DisabilityMap from './DisabilityMap';

@@ -208,119 +208,9 @@ function parseKoreanDisabilityData(data: any[][], fileName: string): ParsedData 
   };
 }
 
-// 단일 행 데이터 파싱 (범용적 접근)
-function parseDataRow(row: any[], headers: any[], fileName: string): DisabilityRecord[] {
-  const records: DisabilityRecord[] = [];
-  let region = cleanText(String(row[0] || ''));
-  
-  if (!region) return records;
-  
-  // 지역명에서 앞의 숫자 제거 (예: "11000 서울특별시" -> "서울특별시")
-  region = region.replace(/^\d+\s*/, '');
-  
-  if (!region) return records;
-  
-  console.log(`지역 "${region}" 파싱 중, ${row.length}개 컬럼`);
-  
-  // 범용적 파싱: 각 컬럼을 확인해서 데이터 추출
-  for (let colIndex = 1; colIndex < row.length && colIndex < headers.length; colIndex++) {
-    const value = parseNumber(row[colIndex]);
-    if (value === null || value <= 0) continue;
-    
-    const header = cleanText(String(headers[colIndex] || ''));
-    if (!header) continue;
-    
-    // 헤더에서 성별과 장애유형 추출
-    const { gender, disabilityType } = parseHeaderInfo(header);
-    
-    // 레코드 생성
-    const record: DisabilityRecord = {
-      id: `${region}_${gender}_${disabilityType}_${colIndex}`,
-      region,
-      gender,
-      disabilityType,
-      count: value,
-      year: extractYearFromFileName(fileName) || 2024,
-    };
-    
-    records.push(record);
-    
-    // 디버깅 정보
-    if (records.length <= 5) {
-      console.log(`레코드 생성: ${region} - ${gender} - ${disabilityType}: ${value}명`);
-    }
-  }
-  
-  return records;
-}
+// 사용하지 않는 함수 제거됨
 
-// 성별/장애유형별 데이터 파싱
-function parseGenderDisabilityData(row: any[], headers: any[], region: string, fileName: string): DisabilityRecord[] {
-  const records: DisabilityRecord[] = [];
-  
-  console.log(`파싱 중인 지역: ${region}`);
-  console.log('헤더들:', headers.slice(0, 10)); // 처음 10개 헤더만 로그
-  
-  // 헤더에서 성별과 장애유형 정보 추출
-  for (let colIndex = 1; colIndex < row.length && colIndex < headers.length; colIndex++) {
-    const value = parseNumber(row[colIndex]);
-    if (value === null || value === 0) continue;
-    
-    const header = cleanText(String(headers[colIndex] || ''));
-    if (!header) continue;
-    
-    console.log(`컬럼 ${colIndex}: ${header} = ${value}`);
-    
-    // 헤더에서 성별과 장애유형 추출
-    const { gender, disabilityType } = parseHeaderInfo(header);
-    
-    // 더 구체적인 장애유형 분류
-    let finalDisabilityType = disabilityType;
-    if (disabilityType === '전체장애' || disabilityType === '신체외부장애' || disabilityType === '정신내부장애') {
-      // 헤더에서 더 구체적인 정보 추출
-      finalDisabilityType = extractSpecificDisabilityType(header) || disabilityType;
-    }
-    
-    const record: DisabilityRecord = {
-      id: `${region}_${gender}_${finalDisabilityType}_${colIndex}`,
-      region,
-      gender,
-      disabilityType: finalDisabilityType,
-      count: value,
-      year: extractYearFromFileName(fileName),
-    };
-    
-    records.push(record);
-  }
-  
-  console.log(`${region}에서 ${records.length}개 레코드 생성됨`);
-  return records;
-}
-
-// 일반 데이터 파싱
-function parseGeneralData(row: any[], headers: any[], region: string, fileName: string): DisabilityRecord[] {
-  const records: DisabilityRecord[] = [];
-  
-  for (let colIndex = 1; colIndex < row.length; colIndex++) {
-    const value = parseNumber(row[colIndex]);
-    if (value === null || value === 0) continue;
-    
-    const header = headers[colIndex] ? cleanText(String(headers[colIndex])) : `컬럼${colIndex}`;
-    
-    const record: DisabilityRecord = {
-      id: `${region}_${header}_${colIndex}`,
-      region,
-      gender: '전체',
-      disabilityType: header.includes('장애') ? header : '전체장애',
-      count: value,
-      year: extractYearFromFileName(fileName),
-    };
-    
-    records.push(record);
-  }
-  
-  return records;
-}
+// 사용하지 않는 함수들 제거됨
 
 // 구체적인 장애유형 추출
 function extractSpecificDisabilityType(header: string): string | null {
@@ -358,8 +248,8 @@ function extractSpecificDisabilityType(header: string): string | null {
   return null;
 }
 
-// 헤더에서 성별과 장애유형 정보 추출 (개선된 버전)
-function parseHeaderInfo(header: string): { gender: '남성' | '여성' | '전체', disabilityType: string } {
+// 헤더에서 성별과 장애유형 정보 추출 (개선된 버전) - 현재 사용하지 않음
+// function parseHeaderInfo(header: string): { gender: '남성' | '여성' | '전체', disabilityType: string } {
   console.log(`🔍 헤더 분석 중: "${header}"`);
   let gender: '남성' | '여성' | '전체' = '전체';
   let disabilityType = '전체장애';
@@ -398,8 +288,8 @@ function parseHeaderInfo(header: string): { gender: '남성' | '여성' | '전�
   return { gender, disabilityType };
 }
 
-// 유틸리티 함수들
-function cleanText(text: string): string {
+// 유틸리티 함수들 - 현재 사용하지 않음
+// function cleanText(text: string): string {
   return text.replace(/[\r\n\t]/g, ' ').trim();
 }
 

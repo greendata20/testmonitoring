@@ -2,14 +2,13 @@ import type {
   ThermalComfortData, 
   ClimateVulnerablePopulation, 
   SolarPowerData, 
-  CarbonEmissionData,
   MapLayer
 } from '../types';
 
 // CSV 파싱 유틸리티
 export const parseCSV = <T>(csvText: string, parser: (row: string[]) => T): T[] => {
   const lines = csvText.trim().split('\n');
-  const headers = lines[0].split(',').map(h => h.replace(/"/g, ''));
+  // Headers processed but not used in this function
   
   return lines.slice(1).map(line => {
     const values = line.split(',').map(v => v.replace(/"/g, ''));
@@ -159,7 +158,7 @@ export class DataProcessor {
     };
   }
 
-  private static getCoordinatesForRegion(regionCode: string): [number, number] {
+  private static getCoordinatesForRegion(_regionCode: string): [number, number] {
     // 실제로는 지역코드에 따른 좌표 매핑이 필요
     // 여기서는 서울 주변의 랜덤 좌표로 시뮬레이션
     const baseLatitude = 37.5665;

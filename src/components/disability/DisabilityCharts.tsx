@@ -14,7 +14,8 @@ import {
   Line,
   ResponsiveContainer
 } from 'recharts';
-import { DisabilityStats, disabilityTypeLabels, nationalStats } from '../../data/disabilityData';
+import type { DisabilityStats } from '../../data/disabilityData';
+import { disabilityTypeLabels, nationalStats } from '../../data/disabilityData';
 import { Button } from '../ui/Button';
 
 interface DisabilityChartsProps {
