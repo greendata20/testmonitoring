@@ -1,69 +1,130 @@
-# React + TypeScript + Vite
+# 🌍 Climate Urban Planner
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A beautiful, AI-powered urban planning tool for climate resilience and sustainability. Built with React, TypeScript, and modern web technologies.
 
-Currently, two official plugins are available:
+![Climate Urban Planner](https://img.shields.io/badge/Climate-Urban%20Planner-green?style=for-the-badge&logo=react)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## Expanding the ESLint configuration
+### 🗺️ Interactive Climate Map
+- **Real-time data visualization** with Leaflet.js
+- **Color-coded markers** based on climate data values
+- **Interactive popups** with detailed regional information
+- **Layer controls** for different data types
+- **Smooth animations** and transitions
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 📊 Climate Data Dashboard
+- **Thermal Comfort Analysis** - Population-based heat island effects
+- **Vulnerable Population Assessment** - Climate risk evaluation
+- **Solar Power Potential** - Renewable energy capacity analysis
+- **Air Quality Monitoring** - PM2.5 levels and environmental health
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### 🎨 Beautiful UI/UX
+- **Glassmorphism Design** - Modern transparent effects
+- **Responsive Layout** - Works perfectly on all devices
+- **Smooth Animations** - Powered by Framer Motion
+- **Professional Typography** - Inter & Poppins font system
+- **Intuitive Navigation** - Clean and accessible interface
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+### 🔧 Technical Features
+- **TypeScript** for type safety
+- **Zustand** for state management
+- **TailwindCSS** for styling
+- **React Icons** for iconography
+- **Real-time data processing** and analysis
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js 20.19+ or 22.12+
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/SeeSoRuFree/ctss-25.git
+   cd climate-urban-planner
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+4. Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+### Build for Production
+
+```bash
+npm run build
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 📱 Usage
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1. **Explore the Map**: Use the interactive map to visualize climate data across different regions
+2. **Toggle Layers**: Use the sidebar to enable/disable different data layers
+3. **View Statistics**: Check real-time climate statistics in the dashboard
+4. **Analyze Data**: Click on map markers to see detailed information
+5. **Planning Tools**: Use the planning panel for urban development scenarios
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🛠️ Technology Stack
+
+- **Frontend**: React 18 + TypeScript
+- **Styling**: TailwindCSS + Custom CSS
+- **Maps**: Leaflet.js + React-Leaflet
+- **Animations**: Framer Motion
+- **State Management**: Zustand
+- **Build Tool**: Vite
+- **Icons**: React Icons (Feather)
+
+## 📊 Data Sources
+
+This application processes climate data including:
+- Thermal comfort indices (UTCI-based)
+- Climate vulnerable population statistics
+- Solar power generation potential
+- Carbon emission and absorption data
+- Air quality measurements
+- Flood risk assessments
+
+## 🌟 Key Components
+
+- **ClimateMap**: Interactive Leaflet map with data visualization
+- **Dashboard**: Real-time statistics and KPI cards  
+- **Sidebar**: Layer controls and analytics panels
+- **DataProcessor**: Climate data analysis utilities
+- **UI Components**: Reusable design system components
+
+## 📝 License
+
+This project was created for the CTSS Hackathon 2025.
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 🙏 Acknowledgments
+
+- **Climate Data**: Based on Korean climate vulnerability and urban planning datasets
+- **Design Inspiration**: Modern climate science dashboard interfaces
+- **Icons**: Feather Icons via React Icons
+- **Maps**: OpenStreetMap contributors
+
+---
+
+**🤖 Generated with [Claude Code](https://claude.ai/code)**
+
+*Building a sustainable future through intelligent urban planning* 🌱
