@@ -51,7 +51,7 @@ export const Card: React.FC<CardProps> = ({
         interactiveStyles,
         className
       )}
-      {...props}
+      {...(props as any)}
     >
       {header && (
         <div className="mb-4 pb-4 border-b border-gray-100">

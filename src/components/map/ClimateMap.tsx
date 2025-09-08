@@ -45,7 +45,7 @@ const MapController: React.FC<{ layers: any[] }> = ({ layers }) => {
 
 export const ClimateMap: React.FC = () => {
   const { layers } = useAppStore();
-  const { thermalComfort, vulnerablePopulation, solarPower, statistics } = useClimateData();
+  const { thermalComfort, vulnerablePopulation, solarPower } = useClimateData();
   const [mapPoints, setMapPoints] = useState<MapPoint[]>([]);
 
   // 실제 데이터를 지도 포인트로 변환

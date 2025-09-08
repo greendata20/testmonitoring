@@ -252,7 +252,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ onClose }) => {
 
       {/* Sidebar */}
       <motion.aside
-        variants={sidebarVariants}
+        variants={sidebarVariants as any}
         animate={sidebar.isOpen ? "open" : "closed"}
         className="fixed left-0 top-16 bottom-0 w-80 bg-white/95 backdrop-blur-xl border-r border-white/20 shadow-2xl z-50 lg:z-30"
       >

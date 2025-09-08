@@ -49,7 +49,7 @@ export const Badge: React.FC<BadgeProps> = ({
         roundedStyles,
         className
       )}
-      {...props}
+      {...(props as any)}
     >
       {icon && <span className="flex-shrink-0">{icon}</span>}
       {children}

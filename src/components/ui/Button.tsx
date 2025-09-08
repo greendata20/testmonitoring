@@ -50,7 +50,7 @@ export const Button: React.FC<ButtonProps> = ({
         className
       )}
       disabled={disabled || isLoading}
-      {...props}
+      {...(props as any)}
     >
       {isLoading && (
         <div className="absolute inset-0 flex items-center justify-center">
